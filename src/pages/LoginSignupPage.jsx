@@ -21,7 +21,7 @@ function LoginSignupPage() {
 
     try {
       if (isLogin) {
-        const response = await axios.post('http://localhost:4000/login', {
+        const response = await axios.post('https://bookhaven1.onrender.com/login', {
           username: formData.username,
           password: formData.password,
         });
@@ -30,7 +30,7 @@ function LoginSignupPage() {
         setIsLoggedIn(true);
         console.log('Login response:', response.data);
       } else {
-        const response = await axios.post('http://localhost:4000/signup', {
+        const response = await axios.post('https://bookhaven1.onrender.com/signup', {
           username: formData.username,
           password: formData.password,
           email: formData.email,

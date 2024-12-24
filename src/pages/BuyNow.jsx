@@ -33,10 +33,10 @@ function BuyNow() {
 
     try {
       // Save order in the database
-      await axios.post('http://localhost:4000/orders', orderDetails);
+      await axios.post('https://bookhaven1.onrender.com/orders', orderDetails);
 
       // Empty the cart
-      await axios.delete('http://localhost:4000/clearCart');
+      await axios.delete('https://bookhaven1.onrender.com/clearCart');
 
       alert('Order placed successfully!');
       navigate('/first-page/orders'); // Redirect to the "Your Orders" page

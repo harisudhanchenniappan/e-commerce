@@ -22,7 +22,7 @@ function Cart() {
   
     const fetchCartItems = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/cart?username=${storedUsername}`);
+        const response = await axios.get(`https://bookhaven1.onrender.com/cart?username=${storedUsername}`);
         console.log("Cart items:", response.data); // Log the response to check the data
         setCart(response.data); // Update the cart state with fetched data
       } catch (error) {
@@ -36,7 +36,7 @@ function Cart() {
   // Fetch cart item
   const fetchCartItem = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/cart?username=${username}`, {
+      const response = await axios.get(`https://bookhaven1.onrender.com/cart?username=${username}`, {
         params: { username },
       });
       setCart(response.data); // Update the cart state with fetched data
@@ -48,7 +48,7 @@ function Cart() {
   // Update an item's quantity
   const handleEdit = async (id) => {
     try {
-      await axios.put(`http://localhost:4000/cart`, { id: id, quantity: editQuantity });
+      await axios.put(`https://bookhaven1.onrender.com/cart`, { id: id, quantity: editQuantity });
       fetchCartItem();
       setEditItemId(null); // Close the edit mode
     } catch (error) {
@@ -62,7 +62,7 @@ function Cart() {
     if (!isConfirmed) return; // Exit if user cancels the confirmation
 
     try {
-      await axios.delete('http://localhost:4000/cartDel', { data: { id } });
+      await axios.delete('https://bookhaven1.onrender.com/cartDel', { data: { id } });
     } catch (error) {
       console.error('Error deleting cart item:', error);
     }

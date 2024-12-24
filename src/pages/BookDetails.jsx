@@ -36,7 +36,7 @@ function BookDetails() {
   }, []);
 
   const handleAddToCart = () => {
-    axios.post('http://localhost:4000/addToCart', {
+    axios.post('https://bookhaven1.onrender.com/addToCart', {
       id: (Math.random() * 10000).toFixed(0),
       title: book.title,
       price: book.price,
