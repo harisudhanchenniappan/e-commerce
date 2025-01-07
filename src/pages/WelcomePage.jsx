@@ -1,120 +1,128 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 function WelcomePage() {
   const styles = {
     container: {
-      fontFamily: "'Roboto', sans-serif",
-      padding: '2rem',
-      backgroundColor: '#f9f9f9',
-      color: '#333',
-      borderRadius: '8px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      fontFamily: "'Poppins', sans-serif",
+      padding: "2rem",
+      backgroundColor: "#1f2937",
+      color: "#ffffff",
+      textAlign: "center",
+      minHeight: "100vh",
     },
-    header: {
-      color: '#2c3e50',
-      fontWeight: 'bold',
-      marginBottom: '1rem',
+    hero: {
+      padding: "3rem 1rem",
+      backgroundColor: "#4f46e5",
+      color: "#ffffff",
+      borderRadius: "8px",
+      marginBottom: "2rem",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
     },
-    leadText: {
-      color: '#7f8c8d',
-      marginBottom: '2rem',
+    heroTitle: {
+      fontSize: "2.5rem",
+      fontWeight: "bold",
+      marginBottom: "1rem",
     },
-    button: {
-      backgroundColor: '#3498db',
-      color: '#fff',
-      padding: '0.8rem 2rem',
-      fontSize: '1.1rem',
-      fontWeight: 'bold',
-      border: 'none',
-      borderRadius: '5px',
-      textDecoration: 'none',
+    heroText: {
+      fontSize: "1.2rem",
+      lineHeight: "1.6",
+      marginBottom: "2rem",
     },
-    sectionTitle: {
-      color: '#2980b9',
-      fontWeight: 'bold',
-      marginTop: '1.5rem',
-      marginBottom: '1rem',
+    heroButton: {
+      backgroundColor: "#e11d48",
+      color: "#ffffff",
+      padding: "0.8rem 2rem",
+      fontSize: "1.2rem",
+      fontWeight: "bold",
+      borderRadius: "8px",
+      textDecoration: "none",
+      transition: "transform 0.2s ease, background-color 0.3s ease",
     },
-    list: {
-      paddingLeft: '1rem',
+    featuresContainer: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+      gap: "1.5rem",
+      marginTop: "2rem",
+    },
+    featureCard: {
+      backgroundColor: "#374151",
+      padding: "1.5rem",
+      borderRadius: "8px",
+      textAlign: "left",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    },
+    featureTitle: {
+      color: "#facc15",
+      fontWeight: "bold",
+      marginBottom: "0.5rem",
+    },
+    featureText: {
+      color: "#d1d5db",
+      fontSize: "1rem",
     },
     footer: {
-      marginTop: '3rem',
-      color: '#95a5a6',
+      marginTop: "3rem",
+      padding: "2rem 1rem",
+      backgroundColor: "#111827",
+      color: "#9ca3af",
+      textAlign: "center",
     },
-    socialLinks: {
-      fontWeight: 'bold',
-      color: '#3498db',
-      textDecoration: 'none',
+    footerLink: {
+      color: "#e11d48",
+      textDecoration: "none",
     },
   };
 
   return (
-    <div className="container mt-5" style={styles.container}>
-      <h1 className="text-center mb-4" style={styles.header}>
-        Welcome to Book Haven
-      </h1>
-      <p className="text-center lead" style={styles.leadText}>
-        Your one-stop destination for a world of books, where every page turns into an adventure!
-      </p>
+    <div style={styles.container}>
+      {/* Hero Section */}
+      <div style={styles.hero}>
+        <h1 style={styles.heroTitle}>Welcome to Book Haven</h1>
+        <p style={styles.heroText}>
+          Discover the joy of reading with a curated collection of books for every genre. Whether you’re a
+          casual reader or a bibliophile, Book Haven is your perfect destination.
+        </p>
+        <Link to="/login-signup" style={styles.heroButton}>
+          Get Started
+        </Link>
+      </div>
 
-      <p className="text-center">
-        <Link to={`/login-signup`} style={styles.button}>
-          Login or Signup
-        </Link>{' '}
-        to start SHOPPING!!!
-      </p>
-
-      <div className="row mt-5">
-        <div className="col-md-6">
-          <h3 style={styles.sectionTitle}>About Us</h3>
-          <p>
-            At <strong>Book Haven</strong>, we believe that books are more than just ink on paper. They are
-            windows to new worlds, doors to adventures, and keys to knowledge. Whether you're a fiction
-            fanatic, a non-fiction nerd, or just looking for your next great read, we have something for
-            everyone.
+      {/* Features Section */}
+      <h2>Why Choose Book Haven?</h2>
+      <div style={styles.featuresContainer}>
+        <div style={styles.featureCard}>
+          <h3 style={styles.featureTitle}>📚 Extensive Collection</h3>
+          <p style={styles.featureText}>
+            Browse thousands of titles across fiction, non-fiction, and more. Find your next great read today.
           </p>
         </div>
-
-        <div className="col-md-6">
-          <h3 style={styles.sectionTitle}>Why Choose Us?</h3>
-          <ul style={styles.list}>
-            <li>Wide range of books across all genres.</li>
-            <li>Handpicked collections by book lovers, for book lovers.</li>
-            <li>Exciting discounts and offers on bestsellers.</li>
-            <li>Fast and reliable delivery to your doorstep.</li>
-          </ul>
+        <div style={styles.featureCard}>
+          <h3 style={styles.featureTitle}>💰 Exclusive Discounts</h3>
+          <p style={styles.featureText}>
+            Enjoy unbeatable prices and special offers on top-selling books every day.
+          </p>
+        </div>
+        <div style={styles.featureCard}>
+          <h3 style={styles.featureTitle}>🚚 Quick Delivery</h3>
+          <p style={styles.featureText}>
+            Get your favorite books delivered to your doorstep with fast and reliable service.
+          </p>
+        </div>
+        <div style={styles.featureCard}>
+          <h3 style={styles.featureTitle}>❤️ Curated Picks</h3>
+          <p style={styles.featureText}>
+            Discover handpicked recommendations tailored to your taste by our team of book enthusiasts.
+          </p>
         </div>
       </div>
 
-      <div className="text-center mt-4">
-        <h4 style={styles.sectionTitle}>Explore Our Collection</h4>
-        <p style={styles.leadText}>
-          Browse through our vast collection of books and discover your next favorite story. We promise you
-          a seamless shopping experience, because at <strong>Book Haven</strong>, your satisfaction is our
-          priority.
-        </p>
-      </div>
-
-      <div className="text-center mt-5" style={styles.footer}>
-        <h5>Contact Us</h5>
-        <p>Email: <a href="mailto:support@bookhaven.com" style={styles.socialLinks}>support@bookhaven.com</a> | Phone: +1 (123) 456-7890</p>
-        <p>
-          Follow us on{' '}
-          <a href="#" style={styles.socialLinks}>
-            Facebook
-          </a>{' '}
-          |{' '}
-          <a href="#" style={styles.socialLinks}>
-            Twitter
-          </a>{' '}
-          |{' '}
-          <a href="#" style={styles.socialLinks}>
-            Instagram
-          </a>
-        </p>
-      </div>
+      {/* Footer Section */}
+      <footer style={styles.footer}>
+        <p>Contact us at <a href="mailto:support@bookhaven.com" style={styles.footerLink}>support@bookhaven.com</a></p>
+        <p>Follow us on <a href="#" style={styles.footerLink}>Facebook</a>, <a href="#" style={styles.footerLink}>Twitter</a>, and <a href="#" style={styles.footerLink}>Instagram</a>.</p>
+        <p>© 2025 Book Haven. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
